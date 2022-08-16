@@ -11,6 +11,11 @@ builder.Services.AddTransient<ISenderService, SenderService>();
 
 
 
+builder.Services.AddMemoryCache();
+builder.Services.AddTransient<IMessageStatusDb, MessageStatusDb>();
+builder.Services.AddTransient<ISenderService, SenderService>();
+builder.Services.AddTransient(typeof(ISender<IosMessage>), typeof(IosSender));
+builder.Services.AddTransient(typeof(ISender<AndroidMessage>), typeof(AndroidSender));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

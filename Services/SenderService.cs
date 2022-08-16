@@ -2,7 +2,7 @@
 
 namespace GlobalMonService.Services
 {
-    internal sealed class SenderService : ISenderService
+    public sealed class SenderService : ISenderService
     {
         private readonly IServiceProvider _serviceProvider;
         private readonly IMessageStatusDb _messageStatusDb;
